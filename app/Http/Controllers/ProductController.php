@@ -38,8 +38,7 @@ class ProductController extends Controller
         ->select('products.*','brands.name as BrandName')
         ->get();  
       
-          ->leftjoin('categories','categories.id','=','products.CategoryID') 
-        ->select('products.*','categories.name as catName')
+        
         
         return view('showProduct')->with('products',$viewProduct);
 
