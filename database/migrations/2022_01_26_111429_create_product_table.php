@@ -21,6 +21,7 @@ class CreateProductTable extends Migration
             $table->string('image');
             $table->integer('quantity')->unsigned();
             $table->string('CategoryID');
+            $table->string('BrandID');
             $table->timestamps();
         });
     }
