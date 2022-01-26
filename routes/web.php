@@ -25,11 +25,21 @@ Route::get('/addCategory', function () {
     return view('addCategory');
 });
 
+Route::get('/addBrand', function () {
+    return view('addBrand');
+});
+
 Route::get('/addProduct', function () {
     return view('addProduct',['categoryID'=>App\Models\Category::all()]);
 });
 Route::post('/addCategory/store',[App\Http\Controllers\CategoryController::class, 'add'])
 ->name('addCategory');
+
+Route::post('/addBrand/store',[App\Http\Controllers\BrandController::class, 'add'])
+->name('addBrand');
+
+Route::get('/viewBrand',[App\Http\Controllers\BrandController::class, 'view'])
+->name('viewBrand');
 
 Route::post('/addProduct/store',[App\Http\Controllers\ProductController::class, 'add'])
 ->name('addProduct');
@@ -37,6 +47,7 @@ Route::post('/addProduct/store',[App\Http\Controllers\ProductController::class, 
 
 Route::get('/viewCategory',[App\Http\Controllers\CategoryController::class, 'view'])
 ->name('viewCategory');
+
 
 Route::get('/viewProduct',[App\Http\Controllers\ProductController::class, 'view'])
 ->name('viewProduct');
