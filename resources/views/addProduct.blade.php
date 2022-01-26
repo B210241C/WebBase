@@ -35,6 +35,14 @@
                 @endforeach
             </select>
             </div>
+            <div class="form-group">
+            <label for="productCategory">Brand</label>
+            <select name="BrandID" id="BrandID" class="form-control">
+                @foreach($BrandID as $brands)
+                <option value="{{$brands->id}}">{{$brands->name}}</option>
+                @endforeach
+            </select>
+            </div>
             <button type="submit" class="btn btn-primary">Add New</button>
         </form>
         <br><br>

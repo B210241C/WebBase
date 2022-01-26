@@ -43,6 +43,18 @@
                 @endforeach
             </select>
             </div>
+            <div class="form-group">
+            <label for="productCategory">Brands</label>
+            <select name="BrandID" id="BrandID" class="form-control">
+                @foreach($brands as $brands)
+                <option value="{{$brands->id}}"
+                    @if($product->BrandID==$brands->id)
+                        selected 
+                    @endif
+                    >{{$brands->name}}</option>
+                @endforeach
+            </select>
+            </div>
             <button type="submit" class="btn btn-primary">Update</button>
         @endforeach
         </form>

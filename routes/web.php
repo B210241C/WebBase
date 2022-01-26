@@ -30,7 +30,7 @@ Route::get('/addBrand', function () {
 });
 
 Route::get('/addProduct', function () {
-    return view('addProduct',['categoryID'=>App\Models\Category::all()]);
+    return view('addProduct',['categoryID'=>App\Models\Category::all()],['BrandID'=>App\Models\brands::all()]);
 });
 Route::post('/addCategory/store',[App\Http\Controllers\CategoryController::class, 'add'])
 ->name('addCategory');
