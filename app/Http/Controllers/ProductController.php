@@ -7,6 +7,7 @@ use DB;
 use App\Models\Product;
 use Session;
 use App\Models\Category;
+use App\Models\brands;
 
 class ProductController extends Controller
 {
@@ -23,6 +24,8 @@ class ProductController extends Controller
             'quantity'=>$r->productQuantity,
             'price'=>$r->productPrice,
             'description'=>$r->productDescription,
+            'BrandID'=>$r->BrandID, 
+
         ]);
         Session::flash('success',"Product create sucessfully!!");
         return redirect()->route('viewProduct');
@@ -30,9 +33,14 @@ class ProductController extends Controller
 
     public function view(){
         $viewProduct=DB::table('products')
-        ->leftjoin('categories','categories.id','=','products.CategoryID') 
-        ->select('products.*','categories.name as catName')
+
+        ->leftjoin('brands','brands.id','=','products.BrandID') 
+        ->select('products.*','brands.name as BrandName')
         ->get();  
+      
+          ->leftjoin('categories','categories.id','=','products.CategoryID') 
+        ->select('products.*','categories.name as catName')
+        
         return view('showProduct')->with('products',$viewProduct);
 
     }
@@ -40,7 +48,9 @@ class ProductController extends Controller
     public function edit($id){
         $products=Product::all()->where('id',$id);
         return view('editProduct')->with('products',$products)
+                                 ->with('brands',brands::all())
                                   ->with('categories',Category::all());
+
 
     }
 
@@ -53,7 +63,7 @@ class ProductController extends Controller
             $imageName=$image->getClientOriginalName();
             $products->image=$imageName;
         }
-
+        $products->BrandID = $r->BrandID;
         $products->categoryID = $r->categoryID;
         $products->name=$r->productName;
         $products->quantity=$r->productQuantity;

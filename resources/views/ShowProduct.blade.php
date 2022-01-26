@@ -14,6 +14,7 @@
                     <td>Image</td>
                     <td>Quantity</td>
                     <td>Category</td>
+                    <td>Brand</td>
                     <td>Action</td>
         		</tr>
         	</thead>
@@ -27,6 +28,7 @@
                     <td><img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="100" class="img-fluid"></td>
                     <td>{{$product->quantity}}</td>
                     <td>{{$product->catName}}</td>
+                    <td>{{$product->BrandName}}</td>
                     <td>
                             <a href="{{route('editProduct',['id'=>$product->id])}}" class="btn btn-warning">Edit</a>
                             <a href="{{ route('deleteProduct',['id'=>$product->id])}}" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure to delete?')">Delete</a>
