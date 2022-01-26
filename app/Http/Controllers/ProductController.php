@@ -34,12 +34,13 @@ class ProductController extends Controller
     public function view(){
         $viewProduct=DB::table('products')
 
+        ->leftjoin('categories','categories.id','=','products.CategoryID') 
         ->leftjoin('brands','brands.id','=','products.BrandID') 
-        ->select('products.*','brands.name as BrandName')
-        ->get();  
-      
+        ->select('products.*','brands.name as BrandName','categories.name as catName')
+        ->get();
         
-        
+       
+       
         return view('showProduct')->with('products',$viewProduct);
 
     }
