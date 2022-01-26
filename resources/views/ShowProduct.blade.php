@@ -14,6 +14,7 @@
                     <td>Image</td>
                     <td>Quantity</td>
                     <td>Category</td>
+                    <td>Action</td>
         		</tr>
         	</thead>
         	<tbody>
