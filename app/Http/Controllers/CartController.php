@@ -45,7 +45,11 @@ class CartController extends Controller
         ->where('my_carts.userID','=',Auth::id())
         ->groupBy('my_carts.userID')
         ->first();
-        $cartItem=$noItem->count_item;
+        if ( !$noItem) {
+            $cartItem=0;
+        }else{
+            $cartItem=$noItem->count_item;
+        }
         Session()->put('cartItem',$cartItem);
     }
 }
