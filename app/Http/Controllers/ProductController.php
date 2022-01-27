@@ -97,9 +97,8 @@ class ProductController extends Controller
         $r=request();
         $keyword=$r->keyword;
         $products=DB::table('products')->where('name','like','%'.$keyword.'%')
-       
                                        ->orWhere('BrandID','like','%'.$keyword.'%')
-        ->paginate(16);
+                                        ->paginate(16);
         return view('allProduct')->with('products',$products);
     }
 
