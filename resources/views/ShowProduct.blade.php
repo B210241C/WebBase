@@ -1,30 +1,7 @@
 @extends('layout')
 @section('content')
 <head>
-    <style>
-        #Vproduct {
-			font-family: Arial, Helvetica, sans-serif;
-			border-collapse: collapse;
-			width: 100%;
-		}
-
-		#Vproduct td, #Vproduct th {
-			border: 1px solid #ddd;
-			padding: 8px;
-		}
-
-		#Vproduct tr:nth-child(even){background-color: #f2f2f2;}
-
-		#Vproduct tr:hover {background-color: #ddd;}
-
-		#Vproduct th {
-			padding-top: 12px;
-			padding-bottom: 12px;
-			text-align: left;
-			background-color: #000000;
-			color: white;
-		}
-    </style>
+  
 </head>
 <div class="row">
     <div class="col-sm-1"></div>
