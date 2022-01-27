@@ -37,7 +37,7 @@ class ProductController extends Controller
         ->leftjoin('categories','categories.id','=','products.CategoryID') 
         ->leftjoin('brands','brands.id','=','products.BrandID') 
         ->select('products.*','brands.name as BrandName','categories.name as catName')
-        ->get();
+        ->get();x
         
        
        
