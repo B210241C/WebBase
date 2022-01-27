@@ -94,7 +94,24 @@
         </a>
 
     @endguest
-
+    <ul class="navbar-nav mr-auto">
+   
+      
+   <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     {{ Auth::user()->name }}
+     </a>
+     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+       <a class="dropdown-item" href="{{route('phone')}}">Phone</a>
+       <a class="dropdown-item" href="{{route('computer')}}">Desktops/Laptop</a>
+       <a class="dropdown-item" href="{{route('headphone')}}">Headphones</a>
+       <a class="dropdown-item" href="{{route('tv')}}">TV</a>
+       <a class="dropdown-item" href="{{route('accesssories')}}">Accesssories</a>
+       <a class="dropdown-item" href="{{route('watch')}}">Watch</a>
+     
+     
+   </li>      
+ </ul>
   </div>
 </nav>
 
