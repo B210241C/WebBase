@@ -8,7 +8,7 @@
                 <img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="70%" class="card-image-top">
                 <div class="card-body">
                     <h5 class="card-title">{{$product->name}}</h5>
-                    <p class="card-text">{{$product->price}}</p>
+                    <p class="card-text">RM{{$product->price}}</p>
                     <a href="{{ route('productdetail',['id'=>$product->id])}}" target="_blank" class="btn btn-danger">Add to cart</a>
                 </div>
             </div>
