@@ -69,8 +69,34 @@
           <a class="dropdown-item" href="{{route('watch')}}">Watch</a>
         
         
-      </li>      
+      </li> 
+      <ul class="navbar-nav">
+   
+      
+   <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     {{ Auth::user()->name }}
+     </a>
+     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+       <a class="dropdown-item" href="{{route('phone')}}">Phone</a>
+       <a class="dropdown-item" href="{{route('computer')}}">Desktops/Laptop</a>
+       <a class="dropdown-item" href="{{route('headphone')}}">Headphones</a>
+       <a class="dropdown-item" href="{{route('tv')}}">TV</a>
+       <a class="dropdown-item" href="{{route('accesssories')}}">Accesssories</a>
+       <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Log Out') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+     
+     
+   </li>      
+ </ul>     
     </ul>
+    
     <form class="form-inline my-2 my-lg-0" action="{{route('search.products')}}" method="POST">
       @csrf
       <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
@@ -94,24 +120,7 @@
         </a>
 
     @endguest
-    <ul class="navbar-nav mr-auto">
-   
-      
-   <li class="nav-item dropdown">
-     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     {{ Auth::user()->name }}
-     </a>
-     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-       <a class="dropdown-item" href="{{route('phone')}}">Phone</a>
-       <a class="dropdown-item" href="{{route('computer')}}">Desktops/Laptop</a>
-       <a class="dropdown-item" href="{{route('headphone')}}">Headphones</a>
-       <a class="dropdown-item" href="{{route('tv')}}">TV</a>
-       <a class="dropdown-item" href="{{route('accesssories')}}">Accesssories</a>
-       <a class="dropdown-item" href="{{route('watch')}}">Watch</a>
-     
-     
-   </li>      
- </ul>
+    
   </div>
 </nav>
 
