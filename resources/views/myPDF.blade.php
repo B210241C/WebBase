@@ -1,20 +1,39 @@
 <head>
-    <titlr>Southern Online</title>
+    <title>Southern Online</title>
+	<style>
+	#Vproduct {
+			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		#Vproduct td, #Vproduct th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		#Vproduct tr:nth-child(even){background-color: #f2f2f2;}
+
+		#Vproduct tr:hover {background-color: #ddd;}
+
+		#Vproduct th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #000000;
+			color: white;
+		}
+	</style>
 </head>
-<style>
-table,th,td{
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-</style>
+
 <body>
 <h3>MY Order Report</h3>
-<table>
+<table id="Vproduct">
     <thead>
  		<tr>
-        	<td>Order ID</td>
-    		<td>Payment Status</td>
-            <td>Amount</td>
+        	<th>Order ID</th>
+    		<th>Payment Status</th>
+            <th>Amount</th>
 		</tr>
 	</thead>
 	<tbody>

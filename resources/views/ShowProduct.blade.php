@@ -1,21 +1,47 @@
 @extends('layout')
 @section('content')
+<head>
+    <style>
+        #Vproduct {
+			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		#Vproduct td, #Vproduct th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		#Vproduct tr:nth-child(even){background-color: #f2f2f2;}
+
+		#Vproduct tr:hover {background-color: #ddd;}
+
+		#Vproduct th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #000000;
+			color: white;
+		}
+    </style>
+</head>
 <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
         <br><br>
-        <table class="table table-bordered">
+        <table id="Vproduct">
         	<thead>
         		<tr>
-        			<td>ID</td>
-        			<td>Name</td>
-                    <td>Description</td>
-                    <td>Price</td>
-                    <td>Image</td>
-                    <td>Quantity</td>
-                    <td>Category</td>
-                    <td>Brand</td>
-                    <td>Action</td>
+        			<th style="width:30px;">ID</th>
+        			<th style="width:150px;">Name</th>
+                    <th style="width:500px;">Description</th>
+                    <th style="width:50px;">Price</th>
+                    <th>Image</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Action</th>
         		</tr>
         	</thead>
         	<tbody>
@@ -41,6 +67,6 @@
         	</tbody>
         </table>
     </div>
-    <div class="col-sm-3"></div>
+    <div class="col-sm-1"></div>
 </div>
 @endsection

@@ -2,7 +2,7 @@
 @section('content')
 
 <!------ Include the above in your HEAD tag ---------->
-
+<div style="height:50px;"></div>
 <form class="form-compact" action="">
             <div class="row paddingBottom20">
                 <div class="container col-4">
@@ -71,4 +71,5 @@
                 </div>
             </div>
         </form>
+        <div style="height:160px;"></div>
 @endsection

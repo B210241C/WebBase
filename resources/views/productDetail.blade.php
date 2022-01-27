@@ -28,6 +28,7 @@
                     <button type="submit" class="btn btn-danger btn-xs">Add to cart</button>
                 </div>
             </div>
+            <div style="height:160px;"></div>
             @endforeach
             </form>
         </div>		
