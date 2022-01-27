@@ -54,7 +54,7 @@
     
     
 </div>
-
+<div style="height:20px;"></div>
 <div class="row">
 	<div class="col-sm-5"></div>
 	<div class="col-sm-7"><a class="btn btn-xs btn-info"href="{{route('pdfReport')}}">Download Report</a></div>		

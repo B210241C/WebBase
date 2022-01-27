@@ -78,11 +78,11 @@
      {{ Auth::user()->name }}
      </a>
      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-       <a class="dropdown-item" href="{{route('phone')}}">Phone</a>
-       <a class="dropdown-item" href="{{route('computer')}}">Desktops/Laptop</a>
-       <a class="dropdown-item" href="{{route('headphone')}}">Headphones</a>
-       <a class="dropdown-item" href="{{route('tv')}}">TV</a>
-       <a class="dropdown-item" href="{{route('accesssories')}}">Accesssories</a>
+       <a class="dropdown-item" href="{{url('addBrand')}}">Add New Brand</a>
+       <a class="dropdown-item" href="{{url('addCategory')}}">Add New Category</a>
+       <a class="dropdown-item" href="{{url('addProduct')}}">Add New Product</a>
+       <a class="dropdown-item" href="{{url('allProduct')}}">All Product</a>
+       <a class="dropdown-item" href="{{url('myOrder')}}">My Order</a>
        <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

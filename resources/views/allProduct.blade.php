@@ -7,7 +7,7 @@
         
             <div class="card m-1"  style="width: 33%;">
            
-                <img style="width:300px; height:300px;"src="{{ asset('images/') }}/{{$product->image}}" alt="" width="70%" class="card-image-top">
+                <img style="width:300px; height:300px;display: block;  margin-left: auto;  margin-right: auto;  width: 50%;"src="{{ asset('images/') }}/{{$product->image}}" alt="" width="70%" class="card-image-top">
                 <div class="card-body">
                 <h4 class="card-title">{{$product->name}}</h4>
                     <p class="card-text">RM{{$product->price}}</p>
