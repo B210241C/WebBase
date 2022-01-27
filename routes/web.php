@@ -76,6 +76,18 @@ Route::get('/editProduct/{id}',[App\Http\Controllers\ProductController::class, '
 Route::get('/deleteProduct/{id}',[App\Http\Controllers\ProductController::class, 'delete'])
 ->name('deleteProduct');
 
+Route::get('/editbrand/{id}',[App\Http\Controllers\BrandController::class, 'edit'])
+->name('editbrand');
+
+Route::get('/deletebrand/{id}',[App\Http\Controllers\BrandController::class, 'delete'])
+->name('deletebrand');
+
+Route::get('/editCategory/{id}',[App\Http\Controllers\CategoryController::class, 'edit'])
+->name('editCategory');
+
+Route::get('/deleteCategory/{id}',[App\Http\Controllers\CategoryController::class, 'delete'])
+->name('deleteCategory');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

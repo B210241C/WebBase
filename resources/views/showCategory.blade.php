@@ -4,12 +4,12 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
         <br><br>
-        <table class="table table-bordered">
+        <table class="table table-bordered"id="Vproduct">
         	<thead>
         		<tr>
-        			<td>ID</td>
-        			<td>Name</td>
-        			<td>Action</td>
+        			<th>ID</th>
+        			<th>Name</th>
+        			<th>Action</th>
         		</tr>
         	</thead>
         	<tbody>
@@ -17,7 +17,10 @@
         		<tr>
         			<td>{{$category->id}}</td>
         			<td>{{$category->name}}</td>
-        			<td></td>
+					<td>
+                            
+                            <a href="{{route('deleteCategory',['id'=>$category->id])}}" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure to delete?')">Delete</a>
+                        </td> 
         		</tr>
         		@endforeach
         	</tbody>
