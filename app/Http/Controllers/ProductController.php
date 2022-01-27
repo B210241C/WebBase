@@ -89,14 +89,16 @@ class ProductController extends Controller
     }
 
     public function allProduct(){
-        $products=Product::paginate(8);
+        $products=Product::paginate(40);
         return view('allProduct',compact('products'));
     }
 
     public function searchProduct(){
         $r=request();
         $keyword=$r->keyword;
-        $products=DB::table('products')->where('name','like','%'.$keyword.'%')->paginate(5);
+        $products=DB::table('products')->where('name','like','%'.$keyword.'%')
+                                       ->orWhere('BrandID','like','%'.$keyword.'%')
+                                        ->paginate(16);
         return view('allProduct')->with('products',$products);
     }
 
@@ -105,4 +107,37 @@ class ProductController extends Controller
         $products=Product::all();
         return view('viewProducts')->with('products',$product);
     }
+
+    public function computer(){
+        $viewPhone=DB::table('products')->where('CategoryID','=','2')->get();
+        return view('allProduct')->with('products',$viewPhone);
+
+    }
+    public function phone(){
+        $viewPhone=DB::table('products')->where('CategoryID','=','1')->get();
+        return view('allProduct')->with('products',$viewPhone);
+
+    }
+    public function headphone(){
+        $viewPhone=DB::table('products')->where('CategoryID','=','3')->get();
+        return view('allProduct')->with('products',$viewPhone);
+
+        }
+    public function tv(){
+        $viewPhone=DB::table('products')->where('CategoryID','=','4')->get();
+        return view('allProduct')->with('products',$viewPhone);
+
+        }
+ public function accesssories(){
+        $viewPhone=DB::table('products')->where('CategoryID','=','5')->get();
+        return view('allProduct')->with('products',$viewPhone);
+
+        }
+    public function watch(){
+        $viewPhone=DB::table('products')->where('CategoryID','=','6')->get();
+        return view('allProduct')->with('products',$viewPhone);
+        
+        }
+
+
 }

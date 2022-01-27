@@ -23,13 +23,13 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
         <br><br>
-        <table class="table table-bordered">
+        <table id="Vproduct">
         	<thead>
         		<tr>
-        			<td>Image</td>
-        			<td>Name</td>
-                    <td>Quantity</td>
-                    <td>Price</td>
+        			<th>Image</th>
+        			<th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
         		</tr>
         	</thead>
         	<tbody>
@@ -41,7 +41,7 @@
                         <input type="hidden" name="subtotal[]" id="subtotal[]" value="{{$product->price*$product->cartQty}}">
                         
                         <img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="100" class="img-fluid"></td>
-        			<td>{{$product->name}}</td>
+        			     <td>{{$product->name}}</td>
                     <td>{{$product->cartQty}}</td>
                     <td>{{$product->price}}</td>
         		</tr>
@@ -50,7 +50,7 @@
                 <tr align="right">
                     <td colspan="3">&nbsp;</td>
                     <td>RM<i> </i> <input type="text" value="0" name="sub" id="sub" size="7" readonly /></td>
-                    <td>&nbsp;</td>
+                   
                 </tr>
         	</tbody>
         </table>
@@ -64,17 +64,19 @@
    <div class="col-sm-9">{{$products->links('pagination::bootstrap-4')}}</div> 
    
    </div>
+   <br>
 <div class="row">
     <div class="col-sm-3"></div>      
             <div class="col-md-6 col-md-offset-3">
                <div class="panel panel-default credit-card-box">
                   <div class="panel-heading" >
                      <div class="row">
-                        <h3>Card Payment</h3>
+                      
+                        <h3>&nbsp;&nbsp;Card Payment</h3>
                         
                      </div>
                   </div>
-                  <div class="panel-body">
+                  <div class="panel-body" >
                     
                      <br>
                      

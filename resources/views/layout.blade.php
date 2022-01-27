@@ -1,5 +1,29 @@
 <!doctype html>
 <html lang="en">
+<style>
+        #Vproduct {
+			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		#Vproduct td, #Vproduct th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		#Vproduct tr:nth-child(even){background-color: #f2f2f2;}
+
+		#Vproduct tr:hover {background-color: #ddd;}
+
+		#Vproduct th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #000000;
+			color: white;
+		}
+    </style>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,7 +47,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <img src="{{asset('images/LAK_Logo.png')}}" style="border-radius: 5%;" alt="Southern Online" width="50">&nbsp;
-  <a class="navbar-brand" href="/" style="font-family:cambria;margin-left:5px">LAK Shopping</a>
+  <a class="navbar-brand" href="" style="font-family:cambria;margin-left:5px">LAK Shopping</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -37,10 +61,13 @@
           Category
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Phone</a>
-          <a class="dropdown-item" href="#">Desktops/Laptop</a>
-    
-          <a class="dropdown-item" href="#">Headphones</a>
+          <a class="dropdown-item" href="{{route('phone')}}">Phone</a>
+          <a class="dropdown-item" href="{{route('computer')}}">Desktops/Laptop</a>
+          <a class="dropdown-item" href="{{route('headphone')}}">Headphones</a>
+          <a class="dropdown-item" href="{{route('tv')}}">TV</a>
+          <a class="dropdown-item" href="{{route('accesssories')}}">Accesssories</a>
+          <a class="dropdown-item" href="{{route('watch')}}">Watch</a>
+        
         
       </li>      
     </ul>
@@ -48,22 +75,26 @@
       @csrf
       <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+   
     </form>&nbsp;
     
     @guest
-    <button type="button" class="btn btn-warning">
-            My Cart <span class="badge bg-dark">
-        </button>
-    @else
-          <button type="button" class="btn btn-warning">
-            My Cart <span class="badge bg-dark">
-              {{Session()->get('cartItem')}}
-            </span>
-          </button>
+    <a class="btn btn-outline-warning my-2 my-sm-0" href="{{route('myCart')}}" >
+          My Cart<span class="badge bg-danger">
+             
+             </span>
+        </a>
 
+    @else
+       
+          <a class="btn btn-outline-warning my-2 my-sm-0" href="{{route('myCart')}}" >
+          My Cart&nbsp;<span class="badge bg-danger">
+          {{Session()->get('cartItem')}}
+             </span>
+        </a>
 
     @endguest
-    
+
   </div>
 </nav>
 

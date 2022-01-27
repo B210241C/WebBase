@@ -4,10 +4,12 @@
 <div class="row justify-content-center">
     @if($products)
         @foreach($products as $product)
+        
             <div class="card m-1"  style="width: 33%;">
-                <img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="70%" class="card-image-top">
+           
+                <img style="width:300px; height:300px;"src="{{ asset('images/') }}/{{$product->image}}" alt="" width="70%" class="card-image-top">
                 <div class="card-body">
-                    <h5 class="card-title">{{$product->name}}</h5>
+                <h4 class="card-title">{{$product->name}}</h4>
                     <p class="card-text">RM{{$product->price}}</p>
                     <a href="{{ route('productdetail',['id'=>$product->id])}}" target="_blank" class="btn btn-danger">Add to cart</a>
                 </div>
@@ -16,6 +18,6 @@
         @endif
 </div>
 <div class="d-flex justify-content-center">
-    {!! $products->links() !!}
+
 </div>
 @endsection

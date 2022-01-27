@@ -52,6 +52,24 @@ Route::get('/viewCategory',[App\Http\Controllers\CategoryController::class, 'vie
 Route::get('/viewProduct',[App\Http\Controllers\ProductController::class, 'view'])
 ->name('viewProduct');
 
+Route::get('/phone',[App\Http\Controllers\ProductController::class, 'phone'])
+->name('phone');
+
+Route::get('/computer',[App\Http\Controllers\ProductController::class, 'computer'])
+->name('computer');
+
+Route::get('/watch',[App\Http\Controllers\ProductController::class, 'watch'])
+->name('watch');
+
+Route::get('/headphone',[App\Http\Controllers\ProductController::class, 'headphone'])
+->name('headphone');
+
+Route::get('/tv',[App\Http\Controllers\ProductController::class, 'tv'])
+->name('tv');
+
+Route::get('/accesssories',[App\Http\Controllers\ProductController::class, 'accesssories'])
+->name('accesssories');
+
 Route::get('/editProduct/{id}',[App\Http\Controllers\ProductController::class, 'edit'])
 ->name('editProduct');
 
@@ -81,4 +99,5 @@ Route::post('/products',[App\Http\Controllers\ProductController::class, 'searchP
 Route::get('/pdfReport',[App\Http\Controllers\OrderController::class,'pdfReport'])->name('pdfReport');
 
 Route::get('/myOrder',[App\Http\Controllers\OrderController::class, 'view'])->name('myOrder');
+
 
